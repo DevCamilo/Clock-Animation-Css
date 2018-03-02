@@ -1,0 +1,205 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+html, body{
+    min-height: 100%;
+}
+
+body{
+    background: #00a99e
+}
+
+/* Asigna el tamaño al reloj */
+.clock{
+    position: relative; /* Asigna una posicon para que se acople en el centro del largo */
+    height: 200px; /* Asigna el largo del reloj */
+    width: 200px; /* Asigna el ancho del reloj */
+    background: white; /* Asigna el color de fondo */
+    box-sizing: border-box; /* Crea un borde al reloj */
+    border-radius: 100%; /* Hace que el reloj sea circular */
+    border: 10px solid #67d2cb; /* Pinta y asigna el grosor al reloj */
+    position: absolute; /* Asigna una posicon para que se acople en el centro del alto */
+	
+	/* Le mantiene en el centro sin importar el tamaño de la página */
+	top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* Asigna el marcador superior */
+.clock .top{
+    position: absolute; /* Asigna un tipo pocicion dentro del reloj */
+    width: 3px; /* Determina su grosor */
+    height: 8px; /* Determina su longitud */
+    background: #262626; /* Determina su color */
+    
+	/* Le posiciona en el centro */
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+}
+
+/* Asigna el marcador derecho */
+.clock .right{
+    position: absolute; /* Asigna un tipo pocicion dentro del reloj */
+    width: 8px; /* Determina su grosor */
+    height: 3px; /* Determina su longitud */
+    background: #262626; /* Determina su color */
+    
+	/* Le posiciona en el centro */
+	top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+}
+
+/* Asigna el maracdor inferior */
+.clock .bottom{
+    position: absolute; /* Asigna un tipo pocicion dentro del reloj	*/
+    width: 3px; /* Determina su grosor */
+    height: 8px; /* Determina su longitud */
+    background: #262626; /* Determina su color */
+    
+	/* Le posiciona en el centro */
+	left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+}
+
+/* Asigna el maracdor izquierdo */
+.clock .left{
+    position: absolute; /* Asigna un tipo pocicion dentro del reloj */
+    width: 8px; /* Determina su grosor */
+    height: 3px; /* Determina su longitud */
+    background: #262626; /* Determina su color */
+    
+	/* Le posiciona en el centro */
+	top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+/* Asigna el marcarador del centro */
+.clock .center{
+	position: absolute; /* Asigna un tipo de pocicion dentro del reloj */
+	width: 6px; /* Determina su grosor */
+    height: 6px; /* Determina su longitud */
+	background: #262626; /* Determina su color */
+    border-radius: 100%; /* Le hace ser un circulo */
+	
+	/* Le pocicion en el centro */
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/* Asigna la sombra del reloj */
+.clock .shadow{
+    height: 200px; /* Asigna el mismo largo que el reloj */
+    width: 200px; /* Asigna el mismo ancho que el reloj */
+    position: absolute; /* Determina un tipo de posicion dentro del reloj */
+    left: 60px; /* Lo posiciona en la mitad del reloj */
+    top: 60px; /* Lo posiciona en la mitad del reloj */
+    transform: rotate(135deg); /* Lo rota 45 grados */
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.1)) /* Le asigna trasnparencia y degradado */
+}
+
+/* Asigna la manecilla del horario */
+.clock .hour{
+    width: 3px; /* Le posiciona en el centro del reloj */
+    height: 100%; /* Le asigna un eje de rotacion en el centro */
+    position: absolute; /* Determina un tipo de pocicion en el reloj */
+    
+	/* Le posiciona en el centro con respecto al colck .center{} */
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+	
+	/* Se asigna el tiempo de rotacion */
+    animation: time 60s infinite linear;
+}
+.clock .hour:before{
+    position: absolute; /* Determina un tipo de posicion en el reloj */
+    content: ''; /* Le quita el contenido */
+    background: #262626; /* Determina su color */
+    height: 20px; /* Determina su longitud */
+    width: 3px; /* Determina su grosor */
+    top: 67px; /* Le asigna una distancia de la parte superior */
+}
+
+/* Asigna la manecilla del minutero */
+.clock .minute {
+    width: 1px; /* Le posiciona en el centro del reloj */
+    height: 100%;  /* Le asigna un eje de rotacion en el centro */
+    position: absolute; /* Determina un tipo de pocicion en el reloj */
+    
+	/* Le posiciona en el centro con respecto al colck .center{} */
+	left: 0;
+    right: 0;
+    margin: 0 auto;
+	
+	/* Se asigna el tiempo de rotacion */
+    animation: time 30s infinite linear;
+}
+.clock .minute:before{
+    position: absolute; /* Determina un tipo de posicion en el reloj */
+    content: ''; /* Le quite el contenido */
+    background: #262626; /* Detrmina su color */
+	
+    height: 40px; /* Determina su longitud */
+    width: 1px; /* Determina su grosor */
+    top: 50px; /* Le asigna una distancia de la parte superior */
+}
+
+/* Asigna la manecilla del segundero */
+.clock .second{
+    width: 2px; /* Le posiciona en el centro del reloj */
+    height: 100%; /* Le asigna un eje de rotacion en el centro */
+    position: absolute; /* Determina un tipo de pocicion en el reloj */
+	
+	/* Le posiciona en el centro con respecto al colck .center{} */
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+	
+	/* Se asigna el tiempo de rotacion */
+    animation: time 15s infinite linear;
+}
+.clock .second:before{
+    position: absolute; /* Determina un tipo de pocicion en el reloj */
+    content: ''; /* Le quieta el contenido */
+    background: #fd1111; /* Determina su color */
+    height: 60px; /* Determina su longitud */
+    width: 2px; /* Determina su grosor */
+    top: 30px; /* Le asigna una distancia de la parte superior */
+}
+
+/* Construye la animacion del movimiento de las manecillas */
+@keyframes time{
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
